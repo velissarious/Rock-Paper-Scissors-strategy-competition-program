@@ -34,16 +34,22 @@ public class App {
 			Weapon weaponPlayerA = noChoicePlayer.choose();
 			Weapon weaponPlayerB = randomChoicePlayer.choose();
 			int victor = board.run(weaponPlayerA, weaponPlayerB);
+
 			if (verbose) {
 				System.out.println("Player A " + weaponPlayerA + " Player B " + weaponPlayerB);
 				System.out.println("Round " + round + " victor " + victor);
 			}
-			if (victor == 1) {
+
+			switch (victor) {
+			case 1:
 				victoryCountA++;
-			} else if (victor == 2) {
+				break;
+			case 2:
 				victoryCountB++;
-			} else {
+				break;
+			default:
 				tieCount++;
+				break;
 			}
 		}
 

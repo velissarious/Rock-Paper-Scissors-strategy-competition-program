@@ -1,5 +1,7 @@
 package stefanos;
 
+import java.util.Arrays;
+
 /**
  * Rock-Paper-Scissors strategy competition program.
  *
@@ -9,6 +11,12 @@ public class App {
 	private static final int ROUNDS_NUMBER = 100;
 
 	public static void main(String[] args) {
+
+		boolean verbose = false;
+		if (Arrays.asList(args).contains("-v")) {
+			verbose = true;
+		}
+
 		// Create the two players:
 		Player noChoicePlayer = new NoChoicePlayer();
 		Player randomChoicePlayer = new RandomChoicePlayer();
@@ -26,8 +34,10 @@ public class App {
 			Weapon weaponPlayerA = noChoicePlayer.choose();
 			Weapon weaponPlayerB = randomChoicePlayer.choose();
 			int victor = board.run(weaponPlayerA, weaponPlayerB);
-			System.out.println("Player A " + weaponPlayerA + " Player B " + weaponPlayerB);
-			System.out.println("Round " + round + " victor " + victor);
+			if (verbose) {
+				System.out.println("Player A " + weaponPlayerA + " Player B " + weaponPlayerB);
+				System.out.println("Round " + round + " victor " + victor);
+			}
 			if (victor == 1) {
 				victoryCountA++;
 			} else if (victor == 2) {

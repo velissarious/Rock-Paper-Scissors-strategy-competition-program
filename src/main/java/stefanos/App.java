@@ -10,16 +10,21 @@ public class App {
 
 	public static void main(String[] args) {
 		// Create the two players:
-		Player randomChoicePlayer = new RandomChoicePlayer();
 		Player noChoicePlayer = new NoChoicePlayer();
+		Player randomChoicePlayer = new RandomChoicePlayer();
 
 		// Create the game board:
 		Board board = new Board();
 
 		System.out.println("Rock-Paper-Scissors");
+
 		// Primary game loop:
-		for (int i = 0; i < ROUNDS_NUMBER; i++) {
-			System.out.println("Hello "+i);
+		for (int round = 0; round < ROUNDS_NUMBER; round++) {
+			Weapon weaponPlayerA = noChoicePlayer.choose();
+			Weapon weaponPlayerB = randomChoicePlayer.choose();
+			int victor = board.run(weaponPlayerA, weaponPlayerB);
+			System.out.println("Player A " + weaponPlayerA + " Player B " + weaponPlayerB);
+			System.out.println("Round " + round + " victor " + victor);
 		}
 
 	}

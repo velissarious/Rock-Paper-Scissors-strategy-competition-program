@@ -20,12 +20,25 @@ public class BoardTest {
 	@Test
 	public void boardTestVictoryPlayerA() {
 		Board board = new Board();
+		final int expectedVictor = 1;
 		int victor = board.run(Weapon.SCISSORS, Weapon.PAPER);
-		assertEquals(1, victor);
+		assertEquals(expectedVictor, victor);
 		victor = board.run(Weapon.ROCK, Weapon.SCISSORS);
-		assertEquals(1, victor);
+		assertEquals(expectedVictor, victor);
 		victor = board.run(Weapon.PAPER, Weapon.ROCK);
-		assertEquals(1, victor);
+		assertEquals(expectedVictor, victor);
+	}
+	
+	@Test
+	public void boardTestVictoryPlayerB() {
+		Board board = new Board();
+		final int expectedVictor = 2;
+		int victor = board.run(Weapon.PAPER, Weapon.SCISSORS);
+		assertEquals(expectedVictor, victor);
+		victor = board.run(Weapon.SCISSORS, Weapon.ROCK);
+		assertEquals(expectedVictor, victor);
+		victor = board.run(Weapon.ROCK, Weapon.PAPER);
+		assertEquals(expectedVictor, victor);
 	}
 
 }

@@ -1,13 +1,26 @@
 package stefanos;
 
 /**
- * Hello world!
+ * Rock-Paper-Scissors strategy competition program.
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class App {
+
+	private static int ROUNDS_NUMBER = 100;
+
+	public static void main(String[] args) {
+		// Create the two players:
+		Player randomChoicePlayer = new RandomChoicePlayer();
+		Player noChoicePlayer = new NoChoicePlayer();
+
+		// Create the game board:
+		Board board = new Board();
+
+		System.out.println("Rock-Paper-Scissors");
+		// Primary game loop:
+		for (int i = 0; i < ROUNDS_NUMBER; i++) {
+			System.out.println("Hello "+i);
+		}
+
+	}
 }

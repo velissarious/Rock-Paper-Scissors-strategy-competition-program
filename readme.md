@@ -1,5 +1,34 @@
 # Rock-Paper-Scissors strategy competition program
 
+The `Rock-Paper-Scissors strategy competition program` is a program which simulated two players playing the traditional hand game rock paper scissors. The two players use two different strategies:
+
+* Player A always chooses paper as a weapon.
+
+* Player B chooses one of the three weapons randomly. 
+
+The program simulated 100 rounds of this game and prints some statistics about the the number of victories and ties in the game.
+
+## Design
+
+Maximum effort was made to make a simple design. 
+
+The user interface is minimal, the program is a command line application with only one possible optional argument to display verbose output in order to be able to inspect each round of the game.
+
+There are 5 classes and one interface. The single interface is called `Player` and defines a single method which must be implemented called `choose` as all types of players must be able to choose a weapon. There are two implementations:
+
+* `NoChoicePlayer` which implements the strategy of player A.
+* `RandomChoicePlayerTest` which implements the strategy of player B.
+
+This is an object oriented design aimed at reducing coupling and increasing conceptual cohesion to make the program easier to read and understand. 
+
+The rules of the game are enforced by another class as well as the outcome of a game, this class is the `Board` of the game. If we wanted to test our players in a different game we could create an alternative class.
+
+The three weapons that can be used by the players are defined in an enumeration.
+
+There are three test cases which test the classes mentioned above to ensure correctness and improve the ease of future change.
+
+The `App` class is the main class of the program where all of the ingredients mentioned are put into use and the output is displayed.
+
 ## How to build the app
 
 To build the app you will need to download and install (if not already available on your system):

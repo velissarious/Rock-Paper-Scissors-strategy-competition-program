@@ -14,20 +14,20 @@ Maximum effort was made to make a simple design.
 
 The user interface is minimal, the program is a command line application with only one possible optional argument to display verbose output in order to be able to inspect each round of the game.
 
-There are 5 classes and one interface. The single interface is called `Player` and defines a single method which must be implemented called `choose` as all types of players must be able to choose a weapon. There are two implementations:
+There are 5 classes and one interface. The single interface is called `Player` and defines a single method which must be implemented, called `choose` as all types of players must be able to choose a weapon. There are two implementations:
 
 * `NoChoicePlayer` which implements the strategy of player A.
 * `RandomChoicePlayerTest` which implements the strategy of player B.
 
-This is an object oriented design aimed at reducing coupling and increasing conceptual cohesion to make the program easier to read and understand. 
+This is an object-oriented design aimed at reducing coupling and increasing conceptual cohesion to make the program easier to read and understand. 
 
-The rules of the game are enforced by another class as well as the outcome of a game, this class is the `Board` of the game. If we wanted to test our players in a different game we could create an alternative class.
+The rules of the game are enforced by another class as well as the outcome of a game, this class is the `Board` of the game. If we wanted to test our players in a different game, we could create an alternative class.
 
 The three weapons that can be used by the players are defined in an enumeration.
 
 There are three test cases which test the classes mentioned above to ensure correctness and improve the ease of future change.
 
-The `App` class is the main class of the program where all of the ingredients mentioned are put into use and the output is displayed.
+The `App` class is the main class of the program where all the ingredients mentioned are put into use and the output is displayed.
 
 ## How to build the app
 
@@ -74,7 +74,7 @@ Player B wins 34 of 100 games
 Tie: 32 of 100 games
 ```
 
-In this run player A and B win an equal amount of times.
+In this run, player A and B win an equal amount of times.
 
 Second run:
 
@@ -85,7 +85,7 @@ Player B wins 31 of 100 games
 Tie: 33 of 100 games
 ```
 
-In this run player A wins most of the games.
+In this run, player A wins most of the games.
 
 Third run:
 
@@ -96,7 +96,7 @@ Player B wins 38 of 100 games
 Tie: 31 of 100 games
 ```
 
-In this run player B wins most of the games.
+In this run, player B wins most of the games.
 
 As you can see due to the random nature of player B the winner is different. However, the results are mostly evenly distributed.
 
@@ -324,4 +324,4 @@ In this output we can see the selections of both players for each one of the 100
 
 ## Testing
 
-Unit tests are also available written in [JUnit 4](https://junit.org/junit4/).
+Unit tests are also available, written in [JUnit 4](https://junit.org/junit4/).

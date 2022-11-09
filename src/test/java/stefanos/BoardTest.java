@@ -15,6 +15,7 @@ public class BoardTest {
 		victor = board.run(Weapon.ROCK, Weapon.ROCK);
 		assertEquals(0, victor);
 		victor = board.run(Weapon.PAPER, Weapon.PAPER);
+		assertEquals(0, victor);
 	}
 	
 	@Test

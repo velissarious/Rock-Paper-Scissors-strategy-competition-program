@@ -41,15 +41,15 @@ public class App {
 			}
 
 			switch (victor) {
-			case 1:
-				victoryCountA++;
-				break;
-			case 2:
-				victoryCountB++;
-				break;
-			default:
-				tieCount++;
-				break;
+				case 1:
+					victoryCountA++;
+					break;
+				case 2:
+					victoryCountB++;
+					break;
+				default:
+					tieCount++;
+					break;
 			}
 		}
 
